@@ -2,7 +2,7 @@
 
 > 📌 *Sobre este Repositório*
 > 
-> Este é o repositório parental (projeto base) do *Sistema de Adoção de Animais (AdotaPet), uma aplicação desenvolvida inteiramente em **Linguagem C* que funciona em ambiente terminal (CLI).
+> Este é o repositório parental (projeto base) do **Sistema de Adoção de Animais (AdotaPet)**, uma aplicação desenvolvida inteiramente em **Linguagem C** que funciona em ambiente terminal (CLI).
 > 
 >O sistema foi projetado para a gestão e centralização de fluxos de adoção em ONGs e abrigos. Ele permite o vínculo estruturado entre os dados do pet, o perfil do adotante e o controle de status dos pedidos de adoção. Todas as regras de negócio, divisão de tarefas da equipe e formatos descritos nesta documentação servem como o padrão oficial para o desenvolvimento do sistema.
 
