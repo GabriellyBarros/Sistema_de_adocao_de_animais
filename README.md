@@ -23,11 +23,11 @@ O AdotaPet é uma solução estruturada para a organização e controle de abrig
 
 ---
 
-### 🫆 Funcionalidades Principais
+###  🫆 Funcionalidades Principais
 
 * *1. Cadastro e Gestão de Animais:* Registro completo de dados como nome, espécie, raça, idade, gênero e disponibilidade do pet.
 * *2. Controle de Adotantes:* Registro de informações de contato e dados essenciais dos potenciais interessados.
 * *3. Fluxo de Pedidos de Adoção:* Vinculação direta entre o adotante e o animal escolhido para análise do abrigo.
 * *4. Status de Acompanhamento:* Controle visual da situação de cada pet (Disponível, Em Análise, Adotado).
 * *5. Consultas Rápidas:* Busca e listagem imediata de animais disponíveis e históricos de adoções concluídas.
-*
+
