@@ -10,7 +10,7 @@ typedef struct {
     char especie[30];       
     char raca[30];          
     int idade;              
-    char sexo[10];          
+    char sexo[1];          
     char status[30];        
     char porte[20];         
     float peso;             
@@ -42,6 +42,17 @@ void pausar() {
 
 //====== Sistema ========
 
+void inicializarsistema() {
+int i;
+contador_registro = 0;
+
+for(i=0; i<100; i++) {
+registros [i].animal.id_animal = 0; }
+
+printf("Dados do animal inicializado com sucesso!")
+    }
+
+
 void registrarAnimal() {
     if (contador_registro >= 500) { 
         printf("Limite do sistema atingido (Max: 500 animais)!\n"); 
@@ -53,9 +64,13 @@ void registrarAnimal() {
 
     a.id_animal = contador_registro + 1; 
 
+//id automatico
+
+s.animal.id_animal = contador_registro+1;
+
     printf("\n----- CADASTRAR NOVO ANIMAL (ID: %d) -----\n", a.id_animal);
 
-    printf("Digite o nome do animal (Obrigatorio): ");
+    printf("Digite o nome do animal (Se nao tiver digite sem nome): ");
     fgets(a.nome_animal, 50, stdin);
     a.nome_animal[strcspn(a.nome_animal, "\n")] = 0;
 
@@ -65,14 +80,14 @@ void registrarAnimal() {
 
     int sexo_valido = 0;
     do {
-        printf("Digite o sexo (Macho ou Femea): ");
+        printf("Digite o sexo (M ou F): ");
         fgets(a.sexo, 10, stdin);
         a.sexo[strcspn(a.sexo, "\n")] = 0;
         
-        if (strcasecmp(a.sexo, "Macho") == 0 || strcasecmp(a.sexo, "Femea") == 0) { 
+        if (strcasecmp(a.sexo, "M") == 0 || strcasecmp(a.sexo, "F") == 0) { 
             sexo_valido = 1;
         } else {
-            printf("\033[1;31mErro: O sexo deve ser apenas 'Macho' ou 'Femea'.\033[0m\n"); 
+            printf("\033[1;31mErro: O sexo deve ser apenas 'M' ou 'F'.\033[0m\n"); 
         }
     } while (!sexo_valido);
 
