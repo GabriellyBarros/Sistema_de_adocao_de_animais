@@ -10,7 +10,7 @@ typedef struct {
     char especie[30];       
     char raca[30];          
     int idade;              
-    char sexo[1];          
+    char sexo[2];          
     char status[30];        
     char porte[20];         
     float peso;             
@@ -43,13 +43,13 @@ void pausar() {
 //====== Sistema ========
 
 void inicializarsistema() {
-int i;
+int i ;
 contador_registro = 0;
 
 for(i=0; i<100; i++) {
-registros [i].animal.id_animal = 0; }
+registros [i].id_animal = 0; }
 
-printf("Dados do animal inicializado com sucesso!")
+printf("Dados do animal inicializado com sucesso!");
     }
 
 
@@ -66,9 +66,9 @@ void registrarAnimal() {
 
 //id automatico
 
-s.animal.id_animal = contador_registro+1;
 
-    printf("\n----- CADASTRAR NOVO ANIMAL (ID: %d) -----\n", a.id_animal);
+
+    printf("\n----- 🐾CADASTRAR NOVO ANIMAL (ID: %d)🐾 -----\n", a.id_animal);
 
     printf("Digite o nome do animal (Se nao tiver digite sem nome): ");
     fgets(a.nome_animal, 50, stdin);
@@ -81,7 +81,7 @@ s.animal.id_animal = contador_registro+1;
     int sexo_valido = 0;
     do {
         printf("Digite o sexo (M ou F): ");
-        fgets(a.sexo, 10, stdin);
+        fgets(a.sexo, 2, stdin);
         a.sexo[strcspn(a.sexo, "\n")] = 0;
         
         if (strcasecmp(a.sexo, "M") == 0 || strcasecmp(a.sexo, "F") == 0) { 
@@ -140,7 +140,7 @@ void consultarAnimal() {
     int i; // i declarada aqui em cima para o modo C89
     limpartela();
 
-    printf("\n========== CONSULTAR ANIMAL ==========\n");
+    printf("\n========== 🐾CONSULTAR ANIMAL🐾 ==========\n");
     printf("Buscar por nome, especie ou raca: ");
     fgets(busca, 50, stdin);
     busca[strcspn(busca, "\n")] = 0;
@@ -173,7 +173,7 @@ void consultarAnimal() {
 void listarTodosAnimais() {
     int i; // i declarada aqui em cima para o modo C89
     limpartela();
-    printf("\n===== LISTA DE ANIMAIS CADASTRADOS =====\n");
+    printf("\n===== 🐾LISTA DE ANIMAIS CADASTRADOS 🐾=====\n");
 
     if (contador_registro == 0) {
         printf("Nenhum animal cadastrado no abrigo ate o momento.\n"); 
@@ -202,7 +202,7 @@ void atualizarDadosAnimal() {
     int i; // i declarada aqui em cima para o modo C89
     limpartela();
 
-    printf("========== ALTERAR DADOS DO ANIMAL ==========\n"); 
+    printf("========== 🐾ALTERAR DADOS DO ANIMAL🐾 ==========\n"); 
     printf("Digite o ID do animal que deseja alterar: ");
     if (scanf("%d", &id_busca) != 1) {
         while (getchar() != '\n');
@@ -238,7 +238,7 @@ void alterarStatusAnimal() {
     int i; // i declarada aqui em cima para o modo C89
     limpartela();
 
-    printf("========== ALTERAR STATUS DO ANIMAL ==========\n"); 
+    printf("========== 🐾ALTERAR STATUS DO ANIMAL🐾 ==========\n"); 
     printf("Informe o ID do Animal: ");
     scanf("%d", &id_busca);
     getchar();
@@ -278,15 +278,18 @@ void alterarStatusAnimal() {
 int main() {
     int opcao = 0;
 
+    inicializarsistema();
+
     do {
         limpartela();
-        printf("\n\033[1;34m=========== ADOTAPET - MENU DE ANIMAIS ===========\033[0m\n");
+        printf("\n\033[1;34m=========== 🐾ADOTAPET - MENU DE ANIMAIS🐾 ===========\033[0m\n");
         printf("1. Cadastrar Novo Animal\n");      
         printf("2. Consultar Animal\n");           
         printf("3. Listar Todos os Animais\n");    
         printf("4. Alterar Dados do Animal\n");    
         printf("5. Alterar Status do Animal\n");   
-        printf("0. Sair\n\n");
+        printf("0. Sair");
+        printf("\n\033[1;34m🐾=🐾=🐾=🐾=🐾=🐾=🐾=🐾=🐾=🐾=🐾🐾=🐾=🐾=🐾=🐾=🐾=🐾=🐾=\033[0m\n");
         printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
         getchar();
