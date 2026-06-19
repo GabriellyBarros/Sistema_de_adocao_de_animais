@@ -9,6 +9,8 @@ void menuAnimais();
 void menuAdotantes();
 void inicializarsistema();
 void iniciarAdotantes();
+void criarArquivoteste();
+void menuPedidoAdocao();
 
 int main()
 {
@@ -24,6 +26,7 @@ int main()
         printf("=================================\n");
         printf("1. Modulo de Animais\n");
         printf("2. Modulo de Adotantes\n");
+        printf("3. Pedido de Adocao\n");
         printf("0. Sair\n");
         printf("Escolha: ");
         scanf("%d", &opcao);
@@ -37,6 +40,10 @@ int main()
 
             case 2:
                 menuAdotantes();
+                break;
+            
+             case 3:
+                menuPedidoAdocao();
                 break;
 
             case 0:
@@ -355,6 +362,7 @@ void alterarStatusAnimal() {
         printf("\nAnimal com o ID %d nao foi encontrado.\n", id_busca);
     }
 }
+
 
 struct PedidoAdocao {
     char nome[100];
@@ -866,4 +874,37 @@ void carregarAdotantes()
     }
 
     fclose(arquivo);
+}
+
+typedef struct {
+    int id_adocao;
+    int id_animal;
+    int id_adotante;
+    char data[20];
+} Adocao;
+
+void testeArquivo(){
+
+ FILE *filePointer;
+ const char *nomeArquivo = "saída.txt";
+
+filePointer = fopen(nomeArquivo, "w");
+if (filePointer == NULL) {
+	perror("Erro ao criar o arquivo");
+	return EXIT_FAILURE;
+}
+
+if (fprintf(filePointer, "Olá, este é um teste de escrita de um arquivo. \n") < 0){
+	perror ("Erro ao escrever o arquivo");
+	fclose(filePointer);
+	return EXIT_FAILURE;
+}
+
+if (fclose(filePointer) != 0) {
+        perror("Erro ao fechar o arquivo");
+        return EXIT_FAILURE;
+    }
+     
+	 printf("Arquivo '%s' criado e escrito com sucesso!\n", nomeArquivo);
+    return EXIT_SUCCESS;
 }
